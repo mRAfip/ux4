@@ -6,10 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { ChevronRight, Github } from "lucide-react";
+import { ChevronRight, Github, ArrowRight } from "lucide-react";
 
-import { ThemeToggle } from "@/components/theme-toggle";
-import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -52,19 +50,20 @@ export const Navbar = () => {
   return (
     <section
       className={cn(
-        "bg-background/70 absolute left-1/2 z-50 w-[min(90%,700px)] -translate-x-1/2 rounded-4xl border backdrop-blur-md transition-all duration-300",
-        "top-5 lg:top-12",
+        "bg-white/10 dark:bg-black/10 absolute left-1/2 z-50 w-[min(90%,900px)] -translate-x-1/2 rounded-4xl border border-white/20 dark:border-white/10 backdrop-blur-xl transition-all duration-300 shadow-2xl",
+        "top-5 lg:top-8",
       )}
     >
-      <div className="flex items-center justify-between px-6 py-3">
+      <div className="flex items-center justify-between pl-6 pr-3 py-3">
         <Link href="/" className="flex shrink-0 items-center gap-2">
-          <Image
+          {/* <Image
             src="/logo.svg"
             alt="logo"
             width={94}
             height={18}
             className="dark:invert"
-          />
+          /> */}
+          <span className="text-white text-md">OOPC</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -73,7 +72,7 @@ export const Navbar = () => {
             {ITEMS.map((link) =>
               link.dropdownItems ? (
                 <NavigationMenuItem key={link.label} className="">
-                  <NavigationMenuTrigger className="data-[state=open]:bg-accent/50 bg-transparent! px-1.5">
+                  <NavigationMenuTrigger className="data-[state=open]:bg-accent/50 bg-transparent! px-1.5 text-white">
                     {link.label}
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -105,8 +104,8 @@ export const Navbar = () => {
                   <Link
                     href={link.href}
                     className={cn(
-                      "relative bg-transparent px-1.5 text-sm font-medium transition-opacity hover:opacity-75",
-                      pathname === link.href && "text-muted-foreground",
+                      "relative bg-transparent px-1.5 text-sm font-medium text-white transition-opacity hover:opacity-75",
+                      pathname === link.href && "text-white/70",
                     )}
                   >
                     {link.label}
@@ -117,25 +116,27 @@ export const Navbar = () => {
           </NavigationMenuList>
         </NavigationMenu>
 
-        {/* Auth Buttons */}
+        {/* GitHub Link and Book a Call Button */}
         <div className="flex items-center gap-2.5">
-          <ThemeToggle />
-          <Link href="/login" className="max-lg:hidden">
-            <Button variant="outline">
-              <span className="relative z-10">Login</span>
-            </Button>
-          </Link>
           <a
             href="https://github.com/shadcnblocks/mainline-nextjs-template"
-            className="text-muted-foreground hover:text-foreground transition-colors"
+            className="text-white/70 hover:text-white transition-colors"
           >
             <Github className="size-4" />
             <span className="sr-only">GitHub</span>
           </a>
+          
+          {/* Book a Call Button */}
+          <Link href="/contact" className="max-lg:hidden">
+            <button className="bg-white text-blue-500 px-6 py-2.5 rounded-full font-medium text-sm transition-all duration-200 flex items-center gap-2 shadow-lg hover:shadow-xl">
+              Book a call
+              <ArrowRight className="size-4" />
+            </button>
+          </Link>
 
           {/* Hamburger Menu Button (Mobile Only) */}
           <button
-            className="text-muted-foreground relative flex size-8 lg:hidden"
+            className="text-white relative flex size-8 lg:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <span className="sr-only">Open main menu</span>
@@ -160,13 +161,23 @@ export const Navbar = () => {
       {/*  Mobile Menu Navigation */}
       <div
         className={cn(
-          "bg-background fixed inset-x-0 top-[calc(100%+1rem)] flex flex-col rounded-2xl border p-6 transition-all duration-300 ease-in-out lg:hidden",
+          "bg-white/10 dark:bg-black/10 fixed inset-x-0 top-[calc(100%+1rem)] flex flex-col rounded-2xl border border-white/20 dark:border-white/10 backdrop-blur-xl p-6 transition-all duration-300 ease-in-out lg:hidden shadow-2xl",
           isMenuOpen
             ? "visible translate-y-0 opacity-100"
             : "invisible -translate-y-4 opacity-0",
         )}
       >
         <nav className="divide-border flex flex-1 flex-col divide-y">
+          {/* Book a Call Button for Mobile */}
+          <div className="py-4 first:pt-0 last:pb-0">
+            <Link href="/contact" className="block">
+              <button className="w-full bg-[#225ECD] hover:bg-[#1e4fb8] text-white px-6 py-3 rounded-full font-medium text-sm transition-all duration-200 flex items-center justify-center gap-2 shadow-lg">
+                Book a call
+                <ArrowRight className="size-4" />
+              </button>
+            </Link>
+          </div>
+          
           {ITEMS.map((link) =>
             link.dropdownItems ? (
               <div key={link.label} className="py-4 first:pt-0 last:pb-0">
@@ -176,7 +187,7 @@ export const Navbar = () => {
                       openDropdown === link.label ? null : link.label,
                     )
                   }
-                  className="text-primary flex w-full items-center justify-between text-base font-medium"
+                  className="text-white flex w-full items-center justify-between text-base font-medium"
                 >
                   {link.label}
                   <ChevronRight
@@ -206,11 +217,11 @@ export const Navbar = () => {
                         }}
                       >
                         <div className="transition-transform duration-200 group-hover:translate-x-1">
-                          <div className="text-primary font-medium">
+                          <div className="text-white font-medium">
                             {item.title}
                           </div>
 
-                          <p className="text-muted-foreground mt-1 text-sm">
+                          <p className="text-white/70 mt-1 text-sm">
                             {item.description}
                           </p>
                         </div>
@@ -224,8 +235,8 @@ export const Navbar = () => {
                 key={link.label}
                 href={link.href}
                 className={cn(
-                  "text-primary hover:text-primary/80 py-4 text-base font-medium transition-colors first:pt-0 last:pb-0",
-                  pathname === link.href && "text-muted-foreground",
+                  "text-white hover:text-white/80 py-4 text-base font-medium transition-colors first:pt-0 last:pb-0",
+                  pathname === link.href && "text-white/70",
                 )}
                 onClick={() => setIsMenuOpen(false)}
               >

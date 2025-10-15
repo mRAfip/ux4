@@ -90,7 +90,7 @@ export const Logos = () => {
           <h2 className="mb-4 text-xl text-balance md:text-2xl lg:text-3xl">
             Powering the world's best product teams.
             <br className="max-md:hidden" />
-            <span className="text-muted-foreground">
+            <span className="text-black/50">
               From next-gen startups to established enterprises.
             </span>
           </h2>

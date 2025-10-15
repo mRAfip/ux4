@@ -37,66 +37,46 @@ const features = [
 export const Hero = () => {
   return (
     <section className="py-28 lg:py-32 lg:pt-44">
-      <div className="container flex flex-col justify-between gap-8 md:gap-14 lg:flex-row lg:gap-20">
-        {/* Left side - Main content */}
-        <div className="flex-1">
-          <h1 className="text-foreground max-w-160 text-3xl tracking-tight md:text-4xl lg:text-5xl xl:whitespace-nowrap">
-            Mainline Next.js template
+      <div className="container">
+        {/* Centered Main Content */}
+        <div className="text-center max-w-4xl mx-auto pt-15">
+          <h1 
+            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tightest leading-tightest"
+            style={{
+              background: 'linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}
+          >
+            Add beautiful social media feeds to any website
           </h1>
 
-          <p className="text-muted-foreground text-1xl mt-5 md:text-3xl">
-            Mainline is an open-source website template built with shadcn/ui,
-            Tailwind 4 & Next.js
+          <p className="text-white/90 text-xl md:text-2xl lg:text-xl max-w-3xl mx-auto leading-relaxed">
+            Embed Instagram, Google Reviews, Tiktok and more in seconds. Works perfectly with Webflow, Framer, or any HTML site. Get started for free!
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-4 lg:flex-nowrap">
-            <Button asChild>
+          <div className="mt-2 flex flex-wrap items-center justify-center gap-4">
+            <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-white/90 shadow-lg hover:shadow-xl transition-all duration-200">
               <a href="https://github.com/shadcnblocks/mainline-nextjs-template">
-                Get template
+                Get started for free
               </a>
             </Button>
             <Button
               variant="outline"
-              className="from-background h-auto gap-2 bg-linear-to-r to-transparent shadow-md"
+              size="lg"
+              className="border-white/30 text-white hover:bg-white/10 hover:border-white/50 gap-2 shadow-lg hover:shadow-xl transition-all duration-200"
               asChild
             >
               <a
                 href="https://shadcnblocks.com"
                 className="max-w-56 truncate text-start md:max-w-none"
               >
-                Built by shadcnblocks.com
+                Learn more
                 <ArrowRight className="stroke-3" />
               </a>
             </Button>
           </div>
-        </div>
-
-        {/* Right side - Features */}
-        <div className="relative flex flex-1 flex-col justify-center space-y-5 max-lg:pt-10 lg:pl-10">
-          <DashedLine
-            orientation="vertical"
-            className="absolute top-0 left-0 max-lg:hidden"
-          />
-          <DashedLine
-            orientation="horizontal"
-            className="absolute top-0 lg:hidden"
-          />
-          {features.map((feature) => {
-            const Icon = feature.icon;
-            return (
-              <div key={feature.title} className="flex gap-2.5 lg:gap-5">
-                <Icon className="text-foreground mt-1 size-4 shrink-0 lg:size-5" />
-                <div>
-                  <h2 className="font-text text-foreground font-semibold">
-                    {feature.title}
-                  </h2>
-                  <p className="text-muted-foreground max-w-76 text-sm">
-                    {feature.description}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
         </div>
       </div>
 
