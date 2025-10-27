@@ -9,15 +9,15 @@
 
   const items = [
     {
-      title: "Purpose-built for product development",
+      title: "UI/UX Design Excellence",
       image: "/features/triage-card.svg",
     },
     {
-      title: "Manage projects end-to-end",
+      title: "Web & Mobile Development",
       image: "/features/cycle-card.svg",
     },
     {
-      title: "Build momentum and healthy habits",
+      title: "AI-Powered Solutions",
       image: "/features/overview-card.svg",
     },
   ];
@@ -30,19 +30,19 @@
           <div className="relative flex items-center justify-center">
             <DashedLine className="text-white/80" />
             <span className="bg-muted text-muted-foreground absolute px-3 font-mono text-sm font-medium tracking-wide max-md:hidden">
-              MEASURE TWICE. CUT ONCE.
+              EXPERTISE. INNOVATION. RESULTS.
             </span>
           </div>
 
           {/* Content */}
           <div className="mx-auto mt-10 grid max-w-4xl items-center gap-3 md:gap-0 lg:mt-24 lg:grid-cols-2">
             <h2 className="text-2xl text-balance tracking-tight md:text-4xl lg:text-5xl">
-              Made for modern product teams
+              Comprehensive digital solutions
             </h2>
             <p className="text-black/50 leading-snug">
-              Mainline is built on the habits that make the best product teams
-              successful: staying focused, moving quickly, and always aiming for
-              high-quality work.
+              From intuitive user experiences to cutting-edge AI applications, 
+              I deliver end-to-end solutions that drive business growth and 
+              exceed user expectations.
             </p>
           </div>
 

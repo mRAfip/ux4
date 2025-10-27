@@ -20,25 +20,29 @@ import { cn } from "@/lib/utils";
 
 const ITEMS = [
   {
-    label: "Features",
-    href: "#features",
+    label: "Services",
+    href: "#services",
     dropdownItems: [
       {
-        title: "Modern product teams",
-        href: "/#feature-modern-teams",
+        title: "UI/UX Design",
+        href: "/#ui-ux-design",
         description:
-          "Mainline is built on the habits that make the best product teams successful",
+          "Creating intuitive and beautiful user experiences that drive engagement",
       },
       {
-        title: "Resource Allocation",
-        href: "/#resource-allocation",
-        description: "Mainline your resource allocation and execution",
+        title: "Web & Mobile Development",
+        href: "/#web-mobile",
+        description: "Full-stack development for web and mobile applications",
+      },
+      {
+        title: "AI Applications",
+        href: "/#ai-solutions",
+        description: "Intelligent solutions powered by artificial intelligence",
       },
     ],
   },
-  { label: "About Us", href: "/about" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "FAQ", href: "/faq" },
+  { label: "About", href: "/about" },
+  { label: "Portfolio", href: "/portfolio" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -129,7 +133,7 @@ export const Navbar = () => {
           {/* Book a Call Button */}
           <Link href="/contact" className="max-lg:hidden">
             <button className="bg-white text-blue-500 px-6 py-2.5 rounded-full font-medium text-sm transition-all duration-200 flex items-center gap-2 shadow-lg hover:shadow-xl">
-              Book a call
+              Let's Work Together
               <ArrowRight className="size-4" />
             </button>
           </Link>
@@ -172,7 +176,7 @@ export const Navbar = () => {
           <div className="py-4 first:pt-0 last:pb-0">
             <Link href="/contact" className="block">
               <button className="w-full bg-[#225ECD] hover:bg-[#1e4fb8] text-white px-6 py-3 rounded-full font-medium text-sm transition-all duration-200 flex items-center justify-center gap-2 shadow-lg">
-                Book a call
+                Let's Work Together
                 <ArrowRight className="size-4" />
               </button>
             </Link>

@@ -49,30 +49,30 @@ export const Hero = () => {
               backgroundClip: 'text'
             }}
           >
-            Add beautiful social media feeds to any website
+            Future-Ready Digital Experiences
           </h1>
 
           <p className="text-white/90 text-xl md:text-2xl lg:text-xl max-w-3xl mx-auto leading-relaxed">
-            Embed Instagram, Google Reviews, Tiktok and more in seconds. Works perfectly with Webflow, Framer, or any HTML site. Get started for free!
+            Expert consultant specializing in UI/UX design, web applications, mobile development, and AI solutions. Let's build something extraordinary together.
           </p>
 
           <div className="mt-2 flex flex-wrap items-center justify-center gap-4">
-            <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-white/90 shadow-lg hover:shadow-xl transition-all duration-200">
-              <a href="https://github.com/shadcnblocks/mainline-nextjs-template">
-                Get started for free
+            <Button asChild size="lg" className="bg-white text-blue-600 rounded-full hover:bg-white/90 shadow-lg hover:shadow-xl transition-all duration-200">
+              <a href="/contact">
+                Start Your Project
               </a>
             </Button>
             <Button
               variant="outline"
               size="lg"
-              className="border-white/30 text-white hover:bg-white/10 hover:border-white/50 gap-2 shadow-lg hover:shadow-xl transition-all duration-200"
+              className="bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white/20 hover:border-white/30 gap-2 shadow-lg hover:shadow-xl transition-all duration-200 rounded-full"
               asChild
             >
               <a
-                href="https://shadcnblocks.com"
+                href="/about"
                 className="max-w-56 truncate text-start md:max-w-none"
               >
-                Learn more
+                View My Work
                 <ArrowRight className="stroke-3" />
               </a>
             </Button>
